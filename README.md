@@ -3,8 +3,8 @@ scaffold for maple / dev
 
 ### Done
 
-[x] learning from `vue-cli`
+[x] learning from `vue-cli` and `create-react-app`
 
 [x] `babel` compile `js` and `jsx`
 
-[x] `postcss`
+[x] `postcss` and plugins, etc

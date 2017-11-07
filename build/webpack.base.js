@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
-console.log('isDev: ', isDev)
+
+// console.log('isDev: ', isDev)
 
 function resolve(dir) {
   return path.resolve(__dirname, '..', dir)
