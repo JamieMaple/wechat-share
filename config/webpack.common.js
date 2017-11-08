@@ -13,11 +13,11 @@ function resolve(dir) {
 module.exports = {
   entry: {
     // vendor write here
-    app: './src/index'
+    app: ['./src/index']
   },
   output: {
     path: resolve('dist'),
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   resolve: {
     extensions: ['.js', '.jsx','.json']
@@ -33,7 +33,7 @@ module.exports = {
         removeComments: true,
         removeEmptyAttributes: true
       },
-      inject: 'body'
+      inject: true
     })
   ],
   module: {
