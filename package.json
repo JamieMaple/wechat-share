@@ -4,7 +4,7 @@
   "description": "scaffold for Maple",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env process.env.NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "dev": "cross-env process.env.NODE_ENV=development node config/dev-server.js",
     "start": "npm run dev",
     "build": "cross-env process.env.NODE_ENV=production node config/build.js"

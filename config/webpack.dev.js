@@ -4,6 +4,10 @@ const common = require('./webpack.common')
 
 module.exports = merge(common, {
   devtool: 'cheap-module-eval-source-map',
+  // devServer: {
+  //   contentBase: './dist',
+  //   hot: true
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
