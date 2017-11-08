@@ -8,6 +8,7 @@ document.body.appendChild(title)
 
 // test css modules
 console.log(styles['class-name'])
+console.log(process.env)
 
 // test class
 class Foo {
