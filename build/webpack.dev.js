@@ -6,8 +6,9 @@ const common = require('./webpack.base')
 module.exports = merge(common, {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: './src',
+    contentBase: __dirname,
     compress: true,
+    overlay: true,
     historyApiFallback: true, // h5 history for spa
     quiet: true, // for friendly-errors
     port: 8080

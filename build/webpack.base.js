@@ -12,6 +12,7 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
+    // vendor write here
     app: './src/index'
   },
   output: {
@@ -23,7 +24,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: 'public/index.html',
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        removeComments: true,
+        removeEmptyAttributes: true
+      },
+      inject: 'body'
     })
   ],
   module: {
@@ -31,17 +41,19 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: ['babel-loader', 'eslint-loader']
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: isDev
         ? [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              module: true,
+              localIdentName: '[name]__[local]__[hash:base64:5]'
             }
           },
           'postcss-loader'
@@ -53,7 +65,8 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-                minimize: true
+                minimize: true,
+                module: true
               }
             },
             'postcss-loader'
@@ -61,12 +74,14 @@ module.exports = {
         })
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        test: /\.(jp?eg|png|gif|svg|ico)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              outputPath: 'images'
+              name: '[name]-[hash:base64:5].[ext]',
+              limit: 10000,
+              outputPath: 'images/'
             }
           }
         ]
@@ -75,9 +90,11 @@ module.exports = {
         test: /\.(ttf|eot|woff|woff2|otf)/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              outputPath: 'fonts'
+              name: '[name]-[hash:base64:5].[ext]',
+              limit: 10000,
+              outputPath: 'fonts/'
             }
           }
         ]

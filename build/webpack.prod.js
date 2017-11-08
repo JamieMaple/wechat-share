@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const BundlePlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin')
 const common = require('./webpack.base')
 
@@ -10,9 +11,9 @@ module.exports = merge(common, {
       warnings: false,
       comments: false
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor'
+    // }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -25,6 +26,12 @@ module.exports = merge(common, {
           return '~maple~maple~~~done~'
         }
       }
+    }),
+    new BundlePlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true,
+      statsFilename: 'report.html',
+      openAnalyzer: false
     })
   ]
 })

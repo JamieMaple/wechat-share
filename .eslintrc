@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "prefer-const": "off",
+    "semi": "off"
+  },
+  "env": {
+    "browser": true
+  }
+}
