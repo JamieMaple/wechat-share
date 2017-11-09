@@ -17,12 +17,23 @@ scaffold for maple / dev
 
 - [x] `esLint` for `webpack`, use `airbnb-base`
 
+- [x] webpack bundle analyzer
+
 ---
 
 ### to-do
 
+**for more support**
+
+- [ ] `typescript`
+
+
+**for cli**
+
 - [ ] custom-vue-cli
+
 - [ ] custom-react-cli
+
 - [ ] all-in-one-cli, auto-build-cli
 
 ---

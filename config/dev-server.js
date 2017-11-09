@@ -11,7 +11,7 @@ const PORT = 8080
 
 config.entry.app.unshift(
   `webpack-dev-server/client?http://localhost:${PORT}`, 
-  "webpack/hot/dev-server"
+  'webpack/hot/only-dev-server'
 )
 
 config.plugins.push(new FriendlyErrorsPlugin({
@@ -26,6 +26,7 @@ const compiler = webpack(config)
 
 const server = new WebpackDevServer(compiler, {
   contentBase: path.resolve(__dirname, '..', 'dist'),
+  publicPath: config.output.publicPath,
   compress: true,
   hot: true,
   noInfo: true,
