@@ -7,6 +7,8 @@ scaffold for maple / dev
 
 - [x] learning from `vue-cli` and `create-react-app`
 
+- [x] `typescript`
+
 - [x] `babel` compile `js` and `jsx`
 
 - [x] `postcss` and plugins, etc
@@ -21,18 +23,19 @@ scaffold for maple / dev
 
 ---
 
+### cli
+
+- [x] `react` cli
+
+---
+
 ### to-do
 
 **for more support**
 
-- [ ] `typescript`
-
+None
 
 **for cli**
-
-- [ ] custom-vue-cli
-
-- [ ] custom-react-cli
 
 - [ ] all-in-one-cli, auto-build-cli
 
