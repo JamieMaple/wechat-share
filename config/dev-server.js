@@ -29,6 +29,7 @@ const server = new WebpackDevServer(compiler, {
   publicPath: config.output.publicPath,
   compress: true,
   hot: true,
+  overlay: true,
   noInfo: true,
   quiet: true, // for friendly-erros-plugin
   historyApiFallback: true // for spa
