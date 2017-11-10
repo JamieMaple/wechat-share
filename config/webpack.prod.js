@@ -10,9 +10,6 @@ module.exports = merge(common, {
       warnings: false,
       comments: false
     }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor'
-    // }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
