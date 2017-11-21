@@ -19,8 +19,6 @@ scaffold for maple / dev
 
 - [x] `esLint` for `webpack`, use `airbnb-base`
 
-- [x] webpack bundle analyzer
-
 ---
 
 ### cli
