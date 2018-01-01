@@ -5,7 +5,7 @@ const OpenBrowser = require('open')
 const path = require('path')
 const config = require('./webpack.dev')
 
-const PORT = 8080
+const { PORT } = require('./commonConfig')
 
 // 此处记录一个坑。。。其实就是因为自己不是很懂 dev-server 内部机制
 
