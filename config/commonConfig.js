@@ -1,3 +1,9 @@
+let analyzer = false
+if (process.env.analyzer_enabled) {
+  analyzer = true
+}
+
 module.exports = {
-  PORT: 8080,
+  PORT: process.env.PORT || 8080,
+  analyzer
 }

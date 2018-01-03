@@ -3,6 +3,8 @@ const merge = require('webpack-merge')
 const BundlePlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const common = require('./webpack.common')
 
+const { analyzer } = require('./commonConfig')
+
 module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
@@ -16,7 +18,7 @@ module.exports = merge(common, {
       }
     }),
     new BundlePlugin({
-      analyzerMode: 'static',
+      analyzerMode: analyzer ? 'static' : 'disabled',
       generateStatsFile: true,
       statsFilename: 'report.html',
       openAnalyzer: false
