@@ -51,4 +51,10 @@ $(() => {
 
 ### 测试代码如下
 
+> http://qydev.weixin.qq.com/wiki/index.php?title=%E5%BE%AE%E4%BF%A1JS-SDK%E6%8E%A5%E5%8F%A3#.E6.A6.82.E8.BF.B0
+
+
+1. 先引入微信 jssdk （script or cmd）
+
+2. 
 
