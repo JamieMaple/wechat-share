@@ -31,6 +31,7 @@ const server = new WebpackDevServer(compiler, {
   hot: true,
   overlay: true,
   noInfo: true,
+  clientLogLevel: 'none',
   quiet: true, // for friendly-erros-plugin
   historyApiFallback: true // for spa
 })

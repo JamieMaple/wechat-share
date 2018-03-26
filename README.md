@@ -56,5 +56,10 @@ $(() => {
 
 1. 先引入微信 jssdk （script or cmd）
 
-2. 
+2. 同源请求 [接口](`https://weixin.bingyan-tech.hustonline.net/service/resources/signature`)
 
+3. 获取 signature，timestamp 以及 **nonce_str**
+
+4. wx.config 传入 debug, signature, timestamp, jsApiList 以及 **nonceStr**，写死 appId
+
+5. config 认证成功后回回调 ready 传入的函数
